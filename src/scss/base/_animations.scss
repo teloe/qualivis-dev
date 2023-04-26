@@ -1,0 +1,41 @@
+@mixin animation($name, $x, $y, $z) {
+    @keyframes #{$name} {
+        0% {
+            transform: translate3d($x, $y, $z);
+            opacity: 0;
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+}
+
+@include animation(fadeInUp, 0, 20px, 0);
+@include animation(fadeInDown, 0, -20px, 0);
+@include animation(fadeInRight, -20px, 0, 0);
+@include animation(fadeInLeft, 20px, 0, 0);
+
+
+@keyframes spinAround {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+        opacity: 0;
+        visibility: hidden;
+	}
+
+	to {
+        opacity: 1;
+        visibility: visible;
+	}
+}
+

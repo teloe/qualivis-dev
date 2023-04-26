@@ -1,0 +1,128 @@
+// Floats
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.fn {
+    float: none;
+    display: inline-block;
+}
+.clr,
+.clear {
+    clear: both;
+}
+
+// Align text
+.tal {
+    text-align: left;
+}
+
+.tar {
+    text-align: right;
+}
+
+.tac {
+    text-align: center;
+}
+
+.hide-el {
+    display: none !important;
+}
+
+.is-clipped {
+    overflow: hidden !important;
+
+    body {
+        position: fixed;
+    }
+
+    .aya-bg {
+        position: static;
+    }
+}
+
+// Error text
+.has-error {
+    color: #ff0000; 
+    font-weight: normal; 
+    font-size: .65rem;
+}
+.hs-error-msg { 
+    @extend .has-error;
+}
+.notification {
+    text-align: center;
+    background: #feecf0;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: .85rem;
+    color: #ff0000;
+}
+
+
+// Shadows
+.shadow-sm {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+}
+.shadow-md {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}
+.shadow-lg {
+    box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.05), 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+.shadow-xl {
+    box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.03), 0px 8px 24px rgba(0, 0, 0, 0.05);
+}
+.shadow-2xl {
+    box-shadow: 0px 60px 100px rgba(0, 0, 0, 0.07), 0px 20px 40px rgba(0, 0, 0, 0.0417275);
+}
+
+
+// Border Radius
+.rounded-sm {
+    border-radius: 2px;
+}
+.rounded {
+    border-radius: 4px;
+}
+.rounded-md {
+    border-radius: 6px;
+}
+.rounded-lg {
+    border-radius: 8px;
+}
+.rounded-xl {
+    border-radius: 12px;
+}
+.rounded-full {
+    border-radius: 999px;
+}
+
+
+
+// Opacity
+.opacity-5 {
+    opacity: 5%;
+}
+.opacity-10 {
+    opacity: 10%;
+}
+.opacity-20 {
+    opacity: 20%;
+}
+.opacity-40 {
+    opacity: 40%;
+}
+.opacity-60 {
+    opacity: 60%;
+}
+.opacity-80 {
+    opacity: 80%;
+}
+
+
+

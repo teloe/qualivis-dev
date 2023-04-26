@@ -1,0 +1,166 @@
+// Abril Text
+@import url('https://use.typekit.net/fst0nae.css');
+
+// Montserrat
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-Light.ttf);
+    font-weight:300;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-LightItalic.ttf);
+    font-weight:300;
+    font-style:italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-Regular.ttf);
+    font-weight:400;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-Italic.ttf);
+    font-weight:400;
+    font-style:italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-Medium.ttf);
+    font-weight:500;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-MediumItalic.ttf);
+    font-weight:500;
+    font-style:italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-SemiBold.ttf);
+    font-weight:600;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-SemiBoldItalic.ttf);
+    font-weight:600;
+    font-style:italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-Bold.ttf);
+    font-weight:700;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/Montserrat-BoldItalic.ttf);
+    font-weight:700;
+    font-style:italic;
+}
+
+
+
+$root-font-size: 18px;
+$font-stack: "Montserrat", sans-serif;
+$alt-stack: "abril-text", serif;
+
+
+
+html {
+    font-size: $root-font-size;
+}
+body {
+    font-family: $font-stack;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a {
+    color: $teal1;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $gray9;
+    font-family: $alt-stack;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+h1 {
+    line-height: 1.2;
+    font-size: 2.444rem;
+    @include bp(lg) {
+        font-size: 3.889rem;
+    }
+}
+h2 {
+    line-height: 1.2;
+    font-size: 1.778rem;
+    @include bp(lg) {
+        font-size: 3.111rem;
+    }
+}
+h3 {
+    line-height: 1.19rem;
+    font-size: 1.333rem;
+    @include bp(lg) {
+        font-size: 2.333rem;
+    }
+}
+h4 {
+    line-height: 1.188;
+    font-size: 1.111rem;
+    @include bp(lg) {
+        font-size: 1.778rem;
+    }
+}
+h5 {
+    line-height: 1.25;
+    font-size: 1rem;
+    @include bp(lg) {
+        font-size: 1.333rem;
+    }
+}
+h6 {
+    line-height: 1.2;
+    font-family: $font-stack;
+    font-size: 1rem;
+    @include bp(lg) {
+        font-size: 1.111rem;
+    }
+}
+p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: $gray7;
+    &.bold {
+        font-weight: 700;
+    }
+    &.sm {
+        font-size: .889rem;
+    }
+    &.xs {
+        font-size: .667rem;
+    }
+    &.sub {
+        font-size: .5rem;
+    }
+    &.muted {
+        color: $gray6;
+    }
+}
+li {
+    line-height: 1.5;
+}
+

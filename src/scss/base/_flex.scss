@@ -1,0 +1,90 @@
+.flex {
+    display: flex;
+
+    $direction: row, column, row-reverse, column-reverse;
+    $wrap: wrap, nowrap, wrap-reverse;
+    $align-positions: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        stretch: stretch,
+        baseline: baseline,
+    );
+    $justify-positions: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        around: space-around,
+        between: space-between,
+        evenly: space-evenly,
+    );
+
+    $bp-md: 768;
+    $bp-lg: 1025;
+    $map-grid-props: (
+        '': 0,
+        '-md': $bp-md,
+        '-lg': $bp-lg,
+    );
+
+    @mixin create-mq($breakpoint) {
+        @if ($breakpoint == 0) {
+            @content;
+        } @else {
+            @media screen and (min-width: $breakpoint * 1px) {
+                @content;
+            }
+        }
+    }
+    @mixin direction($modifier, $prop, $arr, $breakpoint) {
+        @include create-mq($breakpoint) {
+            @each $rule in $arr {
+                &#{$modifier}-#{$rule} {
+                    #{$prop}: #{$rule};
+                }
+            }
+        }
+    }
+    @mixin wrap($modifier, $prop, $arr, $breakpoint) {
+        @include create-mq($breakpoint) {
+            @each $rule in $arr {
+                &#{$modifier}-#{$rule} {
+                    #{$prop}: #{$rule};
+                }
+            }
+        }
+    }
+    @mixin align($modifier, $name, $prop, $arr, $breakpoint) {
+        @include create-mq($breakpoint) {
+            @each $rule, $dir in $arr {
+                &#{$modifier}-#{$name}-#{$rule} {
+                    #{$prop}: #{$dir};
+                }
+            }
+        }
+    }
+
+    @each $modifier, $breakpoint in $map-grid-props {
+        @include direction(
+            $modifier,
+            'flex-direction',
+            $direction,
+            $breakpoint
+        );
+        @include wrap($modifier, 'flex-wrap', $wrap, $breakpoint);
+        @include align(
+            $modifier,
+            'align',
+            'align-items',
+            $align-positions,
+            $breakpoint
+        );
+        @include align(
+            $modifier,
+            'justify',
+            'justify-content',
+            $justify-positions,
+            $breakpoint
+        );
+    }
+}

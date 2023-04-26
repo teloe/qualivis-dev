@@ -1,0 +1,89 @@
+$container-max-width: 1300;
+$grid-cols: 10;
+
+$bp-sm: 767;
+$bp-md: 768;
+$bp-lg: 1025;
+
+$map-grid-props: (
+    "": 0,
+    "-sm": $bp-sm,
+    "-md": $bp-md,
+    "-lg": $bp-lg,
+);
+
+@mixin create-mq($breakpoint) {
+    @if ($breakpoint == 0) {
+        @content;
+    } @else if ($breakpoint == $bp-sm) {
+        @media screen and (max-width: $breakpoint * 1px) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $breakpoint * 1px) {
+            @content;
+        }
+    }
+}
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
+    @include create-mq($breakpoint) {
+        @for $i from 1 through $grid-cols {
+            .col#{$modifier}-#{$i * 10} {
+                flex-basis: calc(100 / (#{$grid-cols} / #{$i}) * 1%);
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+section {
+    &:not(#content) {
+        padding: 3rem 0;
+        @include bp(lg) {
+            padding: 4rem 0;
+        }
+    }
+}
+#content {
+    overflow-x:hidden;
+}
+.container {
+    max-width: $container-max-width * 1px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    &-fluid {
+        margin: 0;
+        max-width: 100%;
+    }
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.col {
+    flex-basis: 100%;
+    padding: 0 1rem;
+}
+@each $modifier, $breakpoint in $map-grid-props {
+    @include create-col-classes($modifier, $grid-cols, $breakpoint);
+}
+
+#nav-overlay {
+    background-color: rgba(0, 0, 0, .2);
+    transition: opacity 300ms cubic-bezier(0.645,0.045,0.355,1);
+    opacity: 0;
+    height: 0;
+
+    &:not(.is-invisible) {
+         position: fixed;
+         opacity: 1;
+         height: 100%;
+         z-index: 5;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+    }
+}

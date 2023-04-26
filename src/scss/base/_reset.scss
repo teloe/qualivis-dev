@@ -1,0 +1,97 @@
+// Remove default margin
+* {
+    margin: 0;
+}
+
+// Box sizing rules
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    // Correct line height in all browsers
+    line-height: 1.5;
+    // Prevent adjustments of font size after orientation changes in iOS
+    -webkit-text-size-adjust: 100%;
+    /* Smooth scrolling only active while the focus is within the page */
+    &:focus-within {
+        scroll-behavior: smooth;
+    }
+}
+
+// Set core body defaults
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+
+// Improve media defaults
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+// Responsive images
+img {
+    height: auto;
+    border: 0;
+}
+
+// Inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+// Remove the inheritance of text transform in Firefox
+button,
+select {
+    text-transform: none;
+}
+
+// Remove default hyperlink styles
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+// Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed
+ul,
+ol {
+    list-style: none;
+}
+
+// Add the correct font weight in Chrome, Edge, and Safari
+b,
+strong {
+    font-weight: 700;
+}
+
+// Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sub {
+    bottom: -0.25em;
+}
+sup {
+    top: -0.5em;
+}
+
+// Always hide an element with the `hidden` HTML attribute.
+[hidden] {
+    display: none !important;
+}
