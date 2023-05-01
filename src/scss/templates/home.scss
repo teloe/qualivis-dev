@@ -1,0 +1,59 @@
+.home {
+    .hero {
+        background-color: $dark-green;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        @include bp(md) {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+        @include bp(lg) {
+            min-height: 700px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            height: 735px;
+            width: 1022px;
+            left: -496px;
+            top: 494px;
+            display:block;
+            background: $green2;
+            opacity: .5;
+            filter: blur(250px);
+            z-index: -1;
+        }
+        .container {
+            width: 100%;
+        }
+        h1,
+        p {
+            color: #fff;
+        }
+        .hero-img {
+            width: calc(100vw - 1rem);
+            margin-top: 2rem;
+            float: right;
+            @include bp(md) {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin-top: 0;
+                margin: auto;
+                width: 420px;
+                height: 295px;
+            }
+            @include bp(lg) {
+                width: 550px;
+                height: 386px;
+            }
+            @include bp(xl) {
+                width: 730px;
+                height: 512px;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+footer {
+    background-color: $dark-green;
+    padding: 3rem 0;
+    ul {
+        padding: 0;
+        margin-bottom: 1.5rem;
+        @include bp(lg) {
+            margin-bottom: 0;
+        }
+        li {
+            margin-top: .5rem;
+            @include bp(lg) {
+                margin-top: 0;
+                margin-bottom: .5rem;
+            }
+        }
+        a {
+            display: block;
+            padding: .5rem .5rem .5rem 0;
+            @include bp(lg) {
+                padding: .25rem;
+            }
+        }
+    }
+    .logo {
+        margin-bottom: 1rem;
+        display: block;
+        @include bp(lg) {
+            margin-bottom: 0;
+        }
+    }
+    a,
+    p {
+        color: #fff;
+        font-size: .667rem;
+        @include bp(md) {
+            font-size: .889rem;
+        }
+
+    }
+    .col {
+        @include bp(lg) {
+            flex-basis: 25%;
+        }
+        &:last-of-type {
+            @include bp(lg) {
+                display: flex;
+                flex-direction: column;
+            }
+            p {
+                @include bp(lg) {
+                    margin-top: auto;
+                }
+             }
+        }
+    }
+}

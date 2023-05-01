@@ -1,0 +1,57 @@
+#mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    white-space: nowrap;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    margin-right: .5rem;
+    z-index: 9;
+    @include bp(lg) {
+        display: none;
+    }
+    span {
+        &::before {
+            content: "";
+            top: -7px;
+        }
+        &::after {
+            content: "";
+            top: 7px;
+        }
+    }
+    span,
+    span::before,
+    span::after {
+        display: block;
+        position: absolute;
+        width: 26px;
+        height: 2px;
+        background-color: #fff;
+        transition-duration: 0.1s;
+    }
+    &.open {
+        span,
+        span::before,
+        span::after {
+            background-color: #fff;
+        }
+        span {
+            transform: rotate(45deg);
+            &::before {
+                top: 0;
+                transform: rotate(0deg);
+            }
+            &::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
